@@ -1,0 +1,9 @@
+{
+  "name": "threads-showcase",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/threads-showcase",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project threads-showcase --web",
+  "targets": {}
+}
