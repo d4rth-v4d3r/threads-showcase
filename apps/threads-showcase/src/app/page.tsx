@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 export default function Index() {
   return (
-    <div className="cover-layout f">
+    <div className="cover-layout">
       <nav className="cover-layout__header">Simple header</nav>
       <main className={clsx('cover-layout__main', 'container-layout')}>
         <div className="sidebar-layout">Hey hey hey</div>

@@ -34,16 +34,6 @@ module.exports = [
     rules: {},
   },
   {
-    files: ['**/*.ts', '**/*.tsx'],
-    languageOptions: {
-      parser: ts.parser,
-      parserOptions: {
-        project: ['apps/**/tsconfig.json', 'packages/**/tsconfig.json'],
-        tsconfigRootDir: __dirname,
-      },
-    },
-  },
-  {
     ignores: [
       '**/eslint.config.js',
       '**/next.config.js',
@@ -51,7 +41,16 @@ module.exports = [
       '**/postcss.config.js',
     ],
   },
-  ...ts.configs.strictTypeChecked,
+  ...ts.configs.strictTypeChecked.map((config) => ({
+    ...config,
+    languageOptions: {
+      parser: ts.parser,
+      parserOptions: {
+        project: ['apps/**/tsconfig.json', 'packages/**/tsconfig.json'],
+        tsconfigRootDir: __dirname,
+      },
+    },
+  })),
   ...tailwind.configs['flat/recommended'],
   {
     settings: {
