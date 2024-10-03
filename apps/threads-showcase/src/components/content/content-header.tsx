@@ -10,7 +10,7 @@ export function ContentHeader() {
           <ArrowLeftIcon />
           Cell Biology, Genetics and Evolution
         </button>
-        <div className="relative h-[216px] w-full">
+        <div className="relative h-[50px] w-full sm:h-[100px] md:h-[216px]">
           <Image
             src="/images/genetics.jpeg"
             fill

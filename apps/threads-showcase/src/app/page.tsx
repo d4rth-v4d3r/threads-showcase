@@ -9,6 +9,14 @@ import { Content } from '../components/content/content';
 import { ContentHeader } from '../components/content/content-header';
 import { ContentTabs } from '../components/content/content-tabs';
 import { Avatar } from '../components/core/avatar';
+import {
+  CalendarIcon,
+  FlashCardsIcon,
+  LaterIcon,
+  NotesIcon,
+  SpacesIcon,
+} from '../components/icon';
+import { MenuBar } from '../components/menubar/menubar';
 import { Sidebar } from '../components/sidebar/sidebar';
 import { SidebarItems } from '../components/sidebar/sidebar-items';
 import { SidebarSearch } from '../components/sidebar/sidebar-search';
@@ -226,6 +234,13 @@ export default function Index() {
             }
           />
         </Content>
+        <MenuBar>
+          <NotesIcon className="size-8 [&_path_]:fill-grey-40" />
+          <CalendarIcon className="size-8 [&_path_]:fill-grey-40" />
+          <FlashCardsIcon className="size-8 [&_path_]:fill-grey-40" />
+          <SpacesIcon className="size-8 [&_path_]:fill-grey-40" />
+          <LaterIcon className="size-8 [&_path_]:fill-grey-40" />
+        </MenuBar>
       </main>
     </div>
   );
