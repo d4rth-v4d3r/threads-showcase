@@ -1,30 +1,37 @@
-import { ReactComponent as CalendarIcon } from '../icon/calendar.svg';
-import { ReactComponent as FlashCardsIcon } from '../icon/flash-cards.svg';
-import { ReactComponent as LaterIcon } from '../icon/later.svg';
-import { ReactComponent as NotesIcon } from '../icon/notes.svg';
-import { ReactComponent as SpacesIcon } from '../icon/spaces.svg';
+import {
+  CalendarIcon,
+  FlashCardsIcon,
+  LaterIcon,
+  NotesIcon,
+  SpacesIcon,
+} from '../icon';
 
 // TODO: change to links once routing is implemented
 export function SidebarItems() {
   return (
-    <div className="stack-layout font-medium text-content-secondary [&_>_button:hover]:bg-background-light [&_>_button:hover]:text-content-accent [&_>_button:hover_path]:fill-content-accent">
-      <button className="icon-layout p-2">
+    <div className="stack-layout [&_>_*]:icon-layout font-medium text-content-secondary [&_>_*:hover]:bg-background-light [&_>_*:hover]:text-content-accent [&_>_*:hover_path]:fill-content-accent [&_>_*]:p-2">
+      <button>
         <NotesIcon />
         All notes
       </button>
-      <button className="icon-layout p-2">
+      <button>
         <CalendarIcon />
         Daily notes
       </button>
-      <button className="icon-layout p-2">
-        <FlashCardsIcon />
-        Flashcards
+      <button className="[&&]:cluster-layout--between">
+        <span className="icon-layout">
+          <FlashCardsIcon />
+          Flashcards
+        </span>
+        <span className="rounded bg-background-tertiary px-1 font-normal">
+          120
+        </span>
       </button>
-      <button className="icon-layout p-2">
+      <button>
         <SpacesIcon />
         Spaces
       </button>
-      <button className="icon-layout p-2">
+      <button>
         <LaterIcon />
         Edit Later
       </button>

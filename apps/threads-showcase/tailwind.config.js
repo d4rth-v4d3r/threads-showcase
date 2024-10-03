@@ -31,6 +31,10 @@ module.exports = {
           sidebar: '#F9F9FA',
           body: '#FFFFFF',
           light: '#E8ECFF',
+          tertiary: '#E7E7EF',
+        },
+        border: {
+          opaque: '#E7E7EF',
         },
       },
     },

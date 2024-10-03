@@ -1,6 +1,8 @@
 import { Sidebar } from '../components/sidebar/sidebar';
 import { SidebarItems } from '../components/sidebar/sidebar-items';
 import { SidebarSearch } from '../components/sidebar/sidebar-search';
+import { SidebarTabs } from '../components/sidebar/sidebar-tabs';
+import { SidebarTree } from '../components/sidebar/sidebar-tree';
 import { SidebarUserMenu } from '../components/sidebar/sidebar-user-menu';
 
 export default function Index() {
@@ -11,6 +13,8 @@ export default function Index() {
           <SidebarUserMenu />
           <SidebarSearch />
           <SidebarItems />
+          <SidebarTabs />
+          <SidebarTree />
         </Sidebar>
         <article className="sidebar-layout__content">
           Hello, from API!

@@ -7,11 +7,11 @@ export function Sidebar({
   return (
     <aside
       className={clsx(
-        'sidebar-layout__bar w-[280px] border-r border-r-grey-15 bg-background-sidebar p-3',
+        'sidebar-layout__bar w-[280px] border-r border-r-grey-15 bg-background-sidebar py-3',
         className,
       )}
     >
-      <div className="stack-layout gap-3">{children}</div>
+      <div className="stack-layout gap-2 [&_>_*]:px-3">{children}</div>
     </aside>
   );
 }

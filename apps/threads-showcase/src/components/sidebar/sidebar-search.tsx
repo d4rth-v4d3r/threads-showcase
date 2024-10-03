@@ -1,4 +1,4 @@
-import { ReactComponent as LensIcon } from '../icon/lens.svg';
+import { LensIcon } from '../icon';
 
 export function SidebarSearch() {
   return (
