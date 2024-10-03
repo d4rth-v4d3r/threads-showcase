@@ -39,6 +39,7 @@ module.exports = [
       '**/next.config.js',
       '**/jest.config.ts',
       '**/postcss.config.js',
+      '**/tailwind.config.js',
     ],
   },
   ...ts.configs.strictTypeChecked.map((config) => ({
@@ -52,11 +53,4 @@ module.exports = [
     },
   })),
   ...tailwind.configs['flat/recommended'],
-  {
-    settings: {
-      tailwindcss: {
-        cssFiles: ['../../packages/ui/src/styles/layouts.css'],
-      },
-    },
-  },
 ];

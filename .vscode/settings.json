@@ -3,5 +3,10 @@
   "editor.formatOnSave": true,
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.ts": "explicit"
   }
 }
