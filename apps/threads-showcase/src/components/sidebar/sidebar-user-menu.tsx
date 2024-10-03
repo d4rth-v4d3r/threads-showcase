@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Avatar } from '../core/avatar';
 import { UnfoldIcon, UnionIcon } from '../icon';
 
 export function SidebarUserMenu() {
@@ -6,12 +6,10 @@ export function SidebarUserMenu() {
     <div>
       <div className="cluster-layout--between px-4 py-2">
         <span className="icon-layout font-semibold">
-          <Image
+          <Avatar
             src="/images/avatar.jpeg"
             alt="avatar icon"
-            width={24}
-            height={24}
-            className="inline h-[24px] rounded-full"
+            size={24}
           />
           Callie Spurlock
           <UnfoldIcon />

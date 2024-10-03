@@ -7,7 +7,7 @@ export function Sidebar({
   return (
     <aside
       className={clsx(
-        'sidebar-layout__bar w-[280px] border-r border-r-grey-15 bg-background-sidebar py-3',
+        'sidebar-layout__bar hidden w-[280px] border-r border-r-grey-15 bg-background-sidebar py-3 md:block',
         className,
       )}
     >

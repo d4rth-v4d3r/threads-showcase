@@ -10,7 +10,7 @@
 
 @layer components {
   .container-layout {
-    @apply w-[min(100vw,1280px)] [&_>_*]:grow mx-auto;
+    @apply w-[clamp(360px,100vw,1280px)] [&_>_*]:grow mx-auto;
   }
 
   .cover-layout {
@@ -34,7 +34,7 @@
   }
 
   .sidebar-layout__bar {
-    @apply grow-0;
+    @apply grow-0 shrink-0;
   }
 
   .sidebar-layout__content {
@@ -55,5 +55,21 @@
 
   .cluster-layout--end {
     @apply flex justify-end items-center;
+  }
+
+  .cluster-layout--start {
+    @apply flex justify-start items-center;
+  }
+
+  .cluster-layout--center {
+    @apply flex justify-center items-center;
+  }
+
+  .cluster-layout--around {
+    @apply flex justify-around items-center;
+  }
+
+  .cluster-layout--evenly {
+    @apply flex justify-evenly items-center;
   }
 }

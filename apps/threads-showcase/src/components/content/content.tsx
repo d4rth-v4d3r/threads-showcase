@@ -1,3 +1,7 @@
 export function Content({ children }: React.ComponentProps<'main'>) {
-  return <article className="stack-layout">{children}</article>;
+  return (
+    <article className="stack-layout sidebar-layout__content">
+      {children}
+    </article>
+  );
 }

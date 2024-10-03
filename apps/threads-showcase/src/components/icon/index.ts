@@ -1,10 +1,12 @@
 export { ReactComponent as ArrowLeftIcon } from './arrow-left.svg';
 export { ReactComponent as CalendarIcon } from './calendar.svg';
 export { ReactComponent as ChevronRightIcon } from './chevron-right.svg';
+export { ReactComponent as CommentIcon } from './comment.svg';
 export { ReactComponent as FlashCardsIcon } from './flash-cards.svg';
 export { ReactComponent as LaterIcon } from './later.svg';
 export { ReactComponent as LensIcon } from './lens.svg';
 export { ReactComponent as NotesIcon } from './notes.svg';
+export { ReactComponent as ReactionIcon } from './reaction.svg';
 export { ReactComponent as SpacesIcon } from './spaces.svg';
 export { ReactComponent as ThreeDotsIcon } from './three-dots.svg';
 export { ReactComponent as UnfoldIcon } from './unfold.svg';
