@@ -25,6 +25,9 @@ module.exports = {
           secondary: '#63637B',
           tertiary: '#9191A8',
           accent: '#3668FF',
+          inverse: {
+            primary: '#FFFFFF',
+          },
         },
         background: {
           secondary: '#F4F4FA',
@@ -35,6 +38,10 @@ module.exports = {
         },
         border: {
           opaque: '#E7E7EF',
+        },
+        banner: {
+          primary: '#423CB9',
+          secondary: '#7874D2',
         },
       },
     },

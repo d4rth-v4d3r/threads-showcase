@@ -1,3 +1,5 @@
+import { Content } from '../components/content/content';
+import { ContentHeader } from '../components/content/content-header';
 import { Sidebar } from '../components/sidebar/sidebar';
 import { SidebarItems } from '../components/sidebar/sidebar-items';
 import { SidebarSearch } from '../components/sidebar/sidebar-search';
@@ -16,9 +18,9 @@ export default function Index() {
           <SidebarTabs />
           <SidebarTree />
         </Sidebar>
-        <article className="sidebar-layout__content">
-          Hello, from API!
-        </article>
+        <Content>
+          <ContentHeader />
+        </Content>
       </main>
     </div>
   );

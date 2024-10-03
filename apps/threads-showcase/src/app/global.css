@@ -10,7 +10,7 @@
 
 @layer components {
   .container-layout {
-    @apply w-[min(100vw,1200px)] [&_>_*]:grow mx-auto;
+    @apply w-[min(100vw,1280px)] [&_>_*]:grow mx-auto;
   }
 
   .cover-layout {
@@ -18,11 +18,11 @@
   }
 
   .cover-layout__header {
-    @apply bg-yellow-600 [margin-block-start:0];
+    @apply [margin-block-start:0];
   }
 
   .cover-layout__footer {
-    @apply bg-yellow-600 [margin-block-end:0];
+    @apply [margin-block-end:0];
   }
 
   .cover-layout__main {
@@ -51,5 +51,9 @@
 
   .cluster-layout--between {
     @apply flex justify-between items-center;
+  }
+
+  .cluster-layout--end {
+    @apply flex justify-end items-center;
   }
 }
