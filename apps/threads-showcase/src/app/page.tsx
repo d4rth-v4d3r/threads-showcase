@@ -21,7 +21,7 @@ import { config } from '../config/env';
 
 export default async function Index() {
   const response = await fetch(
-    `${config.API_URL}/api/article/1ee0920a-5b5e-4605-a8bd-27de171e3cef`,
+    `${config.API_URL}/article/1ee0920a-5b5e-4605-a8bd-27de171e3cef`,
   );
 
   if (!response.ok) return <div>Failed to fetch data</div>;
@@ -62,3 +62,5 @@ export default async function Index() {
     </div>
   );
 }
+
+export const dynamic = 'force-dynamic';
