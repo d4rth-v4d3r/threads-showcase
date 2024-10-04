@@ -12,6 +12,14 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: true,
   },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
+  ...(process.env.NODE_ENV !== 'production' && {
+    cacheMaxMemorySize: 0,
+  }),
 };
 
 const plugins = [

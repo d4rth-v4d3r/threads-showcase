@@ -1,17 +1,13 @@
+import { User } from '@threads/core';
 import { Avatar } from '../core/avatar';
 
-export type CommentAuthorProps = React.PropsWithChildren<{
-  src?: string;
-}>;
+export type CommentAuthorProps = User;
 
-export function CommentAuthor({
-  children,
-  src = '/images/user-1.jpeg',
-}: CommentAuthorProps) {
+export function CommentAuthor({ firstName, lastName, photo }: User) {
   return (
-    <span className="icon-layout text-sm font-semibold text-content-secondary">
-      <Avatar src={src} alt="user avatar" size={24} />
-      {children}
+    <span className="icon-layout text-content-secondary text-sm font-semibold">
+      <Avatar src={photo} alt="user avatar" size={24} />
+      {firstName} {lastName}
     </span>
   );
 }

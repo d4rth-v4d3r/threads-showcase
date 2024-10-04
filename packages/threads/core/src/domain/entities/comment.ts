@@ -27,4 +27,4 @@ export type Comment = z.infer<typeof BaseComment> & {
 export const Comment: z.ZodType<Comment> = BaseComment.extend({
   comments: z.lazy(() => Comment.array()),
   replies: z.lazy(() => Comment.array()),
-});
+}).strict();

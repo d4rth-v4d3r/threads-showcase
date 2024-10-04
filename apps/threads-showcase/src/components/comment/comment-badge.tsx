@@ -1,21 +1,18 @@
-export type CommentBadgeProps = React.PropsWithChildren<{
-  icon?: React.ReactNode;
-  updatedAt?: React.ReactNode;
-}>;
+import { CommentBadge as CommentBadgeType } from '@threads/core';
+
+export type CommentBadgeProps = CommentBadgeType;
 
 export function CommentBadge({
-  children,
   icon,
-  updatedAt,
+  message,
+  date,
 }: CommentBadgeProps) {
   return (
-    <div className="icon-layout text-sm font-semibold text-content-secondary">
+    <div className="icon-layout text-content-secondary text-sm font-semibold">
       {icon && <span className="text-xl">{icon}</span>}
-      {children && <span>{children}</span>}
-      {updatedAt && (
-        <span className="text-xs text-content-tertiary">
-          • {updatedAt}
-        </span>
+      {message && <span>{message}</span>}
+      {date && (
+        <span className="text-content-tertiary text-xs">• {date}</span>
       )}
     </div>
   );

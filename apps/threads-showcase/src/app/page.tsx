@@ -1,14 +1,8 @@
+import { Article, User } from '@threads/core';
 import { Comment } from '../components/comment/comment';
-import { CommentAuthor } from '../components/comment/comment-author';
-import { CommentBadge } from '../components/comment/comment-badge';
-import { CommentFlashCard } from '../components/comment/comment-flash-card';
-import { CommentImage } from '../components/comment/comment-image';
-import { CommentNote } from '../components/comment/comment-note';
-import { CommentReactionsBar } from '../components/comment/comment-reactions-bar';
 import { Content } from '../components/content/content';
 import { ContentHeader } from '../components/content/content-header';
 import { ContentTabs } from '../components/content/content-tabs';
-import { Avatar } from '../components/core/avatar';
 import {
   CalendarIcon,
   FlashCardsIcon,
@@ -23,8 +17,23 @@ import { SidebarSearch } from '../components/sidebar/sidebar-search';
 import { SidebarTabs } from '../components/sidebar/sidebar-tabs';
 import { SidebarTree } from '../components/sidebar/sidebar-tree';
 import { SidebarUserMenu } from '../components/sidebar/sidebar-user-menu';
+import { config } from '../config/env';
 
-export default function Index() {
+export default async function Index() {
+  const response = await fetch(
+    `${config.API_URL}/api/article/1ee0920a-5b5e-4605-a8bd-27de171e3cef`,
+  );
+
+  if (!response.ok) return <div>Failed to fetch data</div>;
+
+  const article = (await response.json()) as Article;
+  const user: User = {
+    photo: '/images/current-user.jpeg',
+    firstName: 'Drew',
+    lastName: 'Koski',
+    id: '7ef424f6-0759-40c9-a713-d06f0a466905',
+  };
+
   return (
     <div className="cover-layout bg-background-body">
       <main className="cover-layout__main container-layout sidebar-layout">
@@ -36,210 +45,16 @@ export default function Index() {
           <SidebarTree />
         </Sidebar>
         <Content>
-          <ContentHeader />
+          <ContentHeader article={article} />
           <ContentTabs />
-          <Comment
-            activityType="published Flashcard"
-            publishedAt="6 days ago"
-            comments={[
-              {
-                activityType: 'published article',
-                publishedAt: '1 week ago',
-                author: <CommentAuthor>Michael Busch</CommentAuthor>,
-                title: 'Cell Biology, Genetics and Evolution',
-                body: (
-                  <>
-                    Dummy comment - But I must explain to you how all
-                    this mistaken idea of denouncing pleasure and
-                    praising pain was born and I will give you a
-                    complete account of the system, and expound the
-                    actual teachings...
-                  </>
-                ),
-                reactions: <CommentReactionsBar />,
-                media: (
-                  <CommentImage
-                    src="/images/genetics.jpeg"
-                    alt="genetics"
-                  />
-                ),
-              },
-              {
-                activityType: 'commented on',
-                publishedAt: '2 week ago',
-                author: <CommentAuthor>Michael Busch</CommentAuthor>,
-                body: (
-                  <>
-                    <CommentNote>
-                      <b>2. Learn before you memorize</b> ↔ Do not try
-                      to apply Spaced Repetition to a piece of content
-                      until you have learned that content once
-                    </CommentNote>
-                    Dummy comment - But I must explain to you how all
-                    this mistaken idea of denouncing pleasure and
-                    praising pain was born and I will give you a
-                    complete account of the system, and expound the
-                    actual teachings...
-                  </>
-                ),
-                reactions: <CommentReactionsBar />,
-              },
-              {
-                activityType: 'published article',
-                publishedAt: '6 days ago',
-                author: <CommentAuthor>Michael Busch</CommentAuthor>,
-                title: 'Ecosystems and Communities',
-                body: (
-                  <>
-                    Dummy comment - But I must explain to you how all
-                    this mistaken idea of denouncing pleasure and
-                    praising pain was born and I will give you a
-                    complete account of the system, and expound the
-                    actual teachings...
-                  </>
-                ),
-                showCommentBox: true,
-                reactions: (
-                  <CommentReactionsBar
-                    reactions={[
-                      {
-                        type: '🔥',
-                        count: 4,
-                      },
-                      {
-                        type: '🎉',
-                        count: 2,
-                      },
-                      {
-                        type: '🤘🏼',
-                        count: 1,
-                      },
-                    ]}
-                    totalComments={3}
-                  />
-                ),
-                media: <CommentFlashCard />,
-                badge: (
-                  <CommentBadge icon="🎉" updatedAt="1 week ago">
-                    Newbie Alert
-                  </CommentBadge>
-                ),
-                replies: [
-                  {
-                    activityType: (
-                      <span>
-                        replied to <b className="text-sm">Themselves</b>
-                      </span>
-                    ),
-                    publishedAt: '6 days ago',
-                    author: (
-                      <CommentAuthor>Michael Busch</CommentAuthor>
-                    ),
-                    body: (
-                      <>
-                        Dummy comment - But I must explain to you how
-                        all this mistaken idea of denouncing pleasure
-                        and praising pain was born and I will give you a
-                        complete account of the system, and expound the
-                        actual teachings...
-                      </>
-                    ),
-                    reactions: <CommentReactionsBar />,
-                    replies: [
-                      {
-                        activityType: (
-                          <span>
-                            replied to{' '}
-                            <b className="text-sm">Themselves</b>
-                          </span>
-                        ),
-                        publishedAt: '6 days ago',
-                        author: (
-                          <CommentAuthor>Michael Busch</CommentAuthor>
-                        ),
-                        body: <>And I really meant it!</>,
-                        reactions: <CommentReactionsBar />,
-                        replies: [
-                          {
-                            activityType: (
-                              <span>
-                                replied to{' '}
-                                <b className="text-sm">Themselves</b>
-                              </span>
-                            ),
-                            publishedAt: '6 days ago',
-                            author: (
-                              <CommentAuthor>
-                                Michael Busch
-                              </CommentAuthor>
-                            ),
-                            body: <>Seriously!</>,
-                            reactions: <CommentReactionsBar />,
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                ],
-              },
-            ]}
-            media={<CommentFlashCard />}
-            author={<CommentAuthor>Michael Busch</CommentAuthor>}
-            reactions={
-              <CommentReactionsBar
-                showComments
-                reactions={[
-                  {
-                    type: '🔥',
-                    count: 4,
-                  },
-                  {
-                    type: '🎉',
-                    count: 2,
-                  },
-                  {
-                    type: '🤘🏼',
-                    count: 1,
-                  },
-                ]}
-                comments={[
-                  <Avatar
-                    key="1"
-                    src="/images/user-3.jpeg"
-                    alt="user avatar"
-                    size={24}
-                  />,
-                  <Avatar
-                    key="2"
-                    src="/images/user-2.jpeg"
-                    alt="user avatar"
-                    size={24}
-                  />,
-                ]}
-              />
-            }
-            title="Ecosystems and Communities"
-            body={
-              <>
-                Dummy comment - But I must explain to you how all this
-                mistaken idea of denouncing pleasure and praising pain
-                was born and I will give you a complete account of the
-                system, and expound the actual teachings...
-              </>
-            }
-            user={
-              <CommentAuthor src="/images/current-user.jpeg">
-                Drew Koski
-              </CommentAuthor>
-            }
-          />
+          <Comment comment={article.comments[0]} user={user} />
         </Content>
         <MenuBar>
-          <NotesIcon className="size-8 [&_path_]:fill-grey-40" />
-          <CalendarIcon className="size-8 [&_path_]:fill-grey-40" />
-          <FlashCardsIcon className="size-8 [&_path_]:fill-grey-40" />
-          <SpacesIcon className="size-8 [&_path_]:fill-grey-40" />
-          <LaterIcon className="size-8 [&_path_]:fill-grey-40" />
+          <NotesIcon className="[&_path_]:fill-grey-40 size-8" />
+          <CalendarIcon className="[&_path_]:fill-grey-40 size-8" />
+          <FlashCardsIcon className="[&_path_]:fill-grey-40 size-8" />
+          <SpacesIcon className="[&_path_]:fill-grey-40 size-8" />
+          <LaterIcon className="[&_path_]:fill-grey-40 size-8" />
         </MenuBar>
       </main>
     </div>

@@ -12,6 +12,7 @@ export function articleJsonAdapter(): ArticleRepository {
       }
 
       const article: Article = {
+        thumbnail: '/images/genetics.jpeg',
         authors: [
           {
             id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
@@ -19,6 +20,7 @@ export function articleJsonAdapter(): ArticleRepository {
             lastName: 'Busch',
             flashcards: 143,
             subscribers: 48,
+            photo: '/images/user-1.jpeg',
           },
         ],
         comments: [
@@ -27,6 +29,7 @@ export function articleJsonAdapter(): ArticleRepository {
               id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
               firstName: 'Michael',
               lastName: 'Busch',
+              photo: '/images/user-1.jpeg',
             },
             body: 'Dummy comment - But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings...',
             comments: [
@@ -35,6 +38,7 @@ export function articleJsonAdapter(): ArticleRepository {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
                   lastName: 'Busch',
+                  photo: '/images/user-1.jpeg',
                 },
                 body: 'Dummy comment - But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings...',
                 comments: [],
@@ -53,6 +57,7 @@ export function articleJsonAdapter(): ArticleRepository {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
                   lastName: 'Busch',
+                  photo: '/images/user-1.jpeg',
                 },
                 body: 'Dummy comment - But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings...',
                 comments: [],
@@ -67,6 +72,7 @@ export function articleJsonAdapter(): ArticleRepository {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
                   lastName: 'Busch',
+                  photo: '/images/user-1.jpeg',
                 },
                 badge: {
                   date: '1 week ago',
@@ -100,6 +106,7 @@ export function articleJsonAdapter(): ArticleRepository {
                       id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                       firstName: 'Michael',
                       lastName: 'Busch',
+                      photo: '/images/user-1.jpeg',
                     },
                     body: 'Dummy comment - But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings...',
                     comments: [],
@@ -109,6 +116,7 @@ export function articleJsonAdapter(): ArticleRepository {
                           id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                           firstName: 'Michael',
                           lastName: 'Busch',
+                          photo: '/images/user-1.jpeg',
                         },
                         body: 'And I really meant it!',
                         comments: [],
@@ -118,6 +126,7 @@ export function articleJsonAdapter(): ArticleRepository {
                               id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                               firstName: 'Michael',
                               lastName: 'Busch',
+                              photo: '/images/user-1.jpeg',
                             },
                             body: 'Seriously!',
                             comments: [],

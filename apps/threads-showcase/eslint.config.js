@@ -15,4 +15,5 @@ module.exports = [
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
   { ignores: ['.next/**/*'] },
+  ...tailwind.configs['flat/recommended'],
 ];
