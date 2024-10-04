@@ -9,6 +9,11 @@
 npm run nx  run-many -- --all  -t lint test build
 ```
 
+# Unit tests can be seen at:
+
+- [Frontend](./apps/threads-showcase/src/components/sidebar/sidebar-tree.spec.tsx)
+- [Backend](./apps/threads-api/src/main.spec.ts)
+
 # Running the project
 
 ```sh
