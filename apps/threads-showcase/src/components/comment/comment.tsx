@@ -5,6 +5,7 @@ import { CommentAuthor } from './comment-author';
 import { CommentBadge } from './comment-badge';
 import { CommentFlashCard } from './comment-flash-card';
 import { CommentImage } from './comment-image';
+import { CommentNote } from './comment-note';
 import { CommentReactionsBar } from './comment-reactions-bar';
 
 export type CommentProps = {
@@ -53,6 +54,7 @@ export function Comment({
               isReply ? 'pl-4' : undefined,
             )}
           >
+            {comment?.note && <CommentNote>{comment.note}</CommentNote>}
             {comment?.body}
           </p>
         </div>
@@ -73,20 +75,25 @@ export function Comment({
         <CommentReactionsBar
           showComments
           reactions={comment?.reactions}
-          comments={[
+          comments={Array.from(
+            comment?.comments
+              .concat(comment.replies)
+              .flatMap((c) => c.author)
+              .reduce((lookup, author) => {
+                if (!lookup.has(author.id)) {
+                  lookup.set(author.id, author);
+                }
+                return lookup;
+              }, new Map<string, User>())
+              .values() ?? [],
+          ).map((author) => (
             <Avatar
-              key="1"
-              src="/images/user-3.jpeg"
-              alt="user avatar"
+              key={author.id}
+              alt={author.lastName}
               size={24}
-            />,
-            <Avatar
-              key="2"
-              src="/images/user-2.jpeg"
-              alt="user avatar"
-              size={24}
-            />,
-          ]}
+              src={author.photo}
+            />
+          ))}
         />
       </div>
       {!isReply && <hr />}

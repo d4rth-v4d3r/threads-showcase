@@ -25,6 +25,7 @@ export function articleJsonAdapter(): ArticleRepository {
         ],
         comments: [
           {
+            id: '225fe5aa-b219-44fd-9963-7a594a19b263',
             author: {
               id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
               firstName: 'Michael',
@@ -34,6 +35,7 @@ export function articleJsonAdapter(): ArticleRepository {
             body: 'Dummy comment - But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings...',
             comments: [
               {
+                id: '2f92b96b-268b-403d-9d11-f48cb54a0853',
                 author: {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
@@ -53,6 +55,7 @@ export function articleJsonAdapter(): ArticleRepository {
                 type: 'article',
               },
               {
+                id: '288051cf-b450-4fba-8a9f-85f637ef0c21',
                 author: {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
@@ -68,6 +71,7 @@ export function articleJsonAdapter(): ArticleRepository {
                 type: 'comment',
               },
               {
+                id: '82af64dd-3d59-4e87-9cf5-dc0d4de2919d',
                 author: {
                   id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                   firstName: 'Michael',
@@ -102,6 +106,7 @@ export function articleJsonAdapter(): ArticleRepository {
                 ],
                 replies: [
                   {
+                    id: '7f55de39-cd47-435d-8b69-3235337403af',
                     author: {
                       id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                       firstName: 'Michael',
@@ -112,6 +117,7 @@ export function articleJsonAdapter(): ArticleRepository {
                     comments: [],
                     replies: [
                       {
+                        id: 'e3c5bb77-d767-4926-97fe-d39a47e42069',
                         author: {
                           id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                           firstName: 'Michael',
@@ -122,6 +128,7 @@ export function articleJsonAdapter(): ArticleRepository {
                         comments: [],
                         replies: [
                           {
+                            id: 'da1fd23f-9a85-4133-b7c0-e04f6f10dc99',
                             author: {
                               id: 'c8a40af1-fa35-4116-ad27-322a2bfa00ac',
                               firstName: 'Michael',

@@ -47,14 +47,16 @@ export default async function Index() {
         <Content>
           <ContentHeader article={article} />
           <ContentTabs />
-          <Comment comment={article.comments[0]} user={user} />
+          {article.comments.map((comment) => (
+            <Comment comment={comment} user={user} key={comment.id} />
+          ))}
         </Content>
         <MenuBar>
-          <NotesIcon className="[&_path_]:fill-grey-40 size-8" />
-          <CalendarIcon className="[&_path_]:fill-grey-40 size-8" />
-          <FlashCardsIcon className="[&_path_]:fill-grey-40 size-8" />
-          <SpacesIcon className="[&_path_]:fill-grey-40 size-8" />
-          <LaterIcon className="[&_path_]:fill-grey-40 size-8" />
+          <NotesIcon className="size-8 [&_path_]:fill-grey-40" />
+          <CalendarIcon className="size-8 [&_path_]:fill-grey-40" />
+          <FlashCardsIcon className="size-8 [&_path_]:fill-grey-40" />
+          <SpacesIcon className="size-8 [&_path_]:fill-grey-40" />
+          <LaterIcon className="size-8 [&_path_]:fill-grey-40" />
         </MenuBar>
       </main>
     </div>

@@ -7,6 +7,7 @@ import { User } from './user';
 
 export const BaseComment = z
   .object({
+    id: z.string(),
     author: User,
     body: z.string(),
     date: z.string(), // TODO: Use z.date() instead
