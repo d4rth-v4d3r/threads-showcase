@@ -1,6 +1,8 @@
-import { Article } from '../../domain/entities';
-import { NotFoundError } from '../../domain/errors/not-found-error';
-import { ArticleRepository } from '../../domain/repositories/article-repository';
+import {
+  Article,
+  ArticleRepository,
+  NotFoundError,
+} from '@threads/core';
 
 export function articleJsonAdapter(): ArticleRepository {
   return {

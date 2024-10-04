@@ -1,6 +1,6 @@
+import { getArticleFactory } from '@threads/core';
 import express from 'express';
-import { getArticleFactory } from '../../app/get-article';
-import { articleJsonAdapter } from '../sample-json/article-json-adapter';
+import { articleJsonAdapter } from '../json/article-json-adapter';
 
 export const articlesRouter = express.Router();
 

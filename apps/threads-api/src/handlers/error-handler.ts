@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { NotFoundError } from '@threads/core';
 import e from 'express';
-import { NotFoundError } from '../../domain/errors/not-found-error';
 
 export const errorHandler: e.ErrorRequestHandler = (
   err,

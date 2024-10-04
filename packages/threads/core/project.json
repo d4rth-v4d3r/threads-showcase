@@ -1,0 +1,19 @@
+{
+  "name": "threads-core",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/threads/core/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/threads/core",
+        "main": "packages/threads/core/src/index.ts",
+        "tsConfig": "packages/threads/core/tsconfig.lib.json",
+        "assets": ["packages/threads/core/*.md"]
+      }
+    }
+  }
+}
