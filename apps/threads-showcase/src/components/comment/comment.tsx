@@ -24,13 +24,13 @@ export function Comment({
     <>
       <div
         className={clsx(
-          'stack-layout md:cluster-layout--between text-content-secondary gap-3 md:flex-row lg:gap-[160px]',
-          isReply ? 'border-l-grey-10 mt-9 border-l' : 'pb-3 pt-9',
+          'stack-layout md:cluster-layout--between gap-3 text-content-secondary md:flex-row lg:gap-[160px]',
+          isReply ? 'mt-9 border-l border-l-grey-10' : 'pb-3 pt-9',
         )}
       >
         <div className={'stack-layout gap-1 px-2'}>
           {comment?.badge && <CommentBadge {...comment.badge} />}
-          <div className="cluster-layout--between lg:cluster-layout--start text-content-tertiary gap-6 text-xs">
+          <div className="cluster-layout--between lg:cluster-layout--start gap-6 text-xs text-content-tertiary">
             {comment?.author && <CommentAuthor {...comment.author} />}
             <span className="hidden lg:block">
               {comment?.type === CommentType.Enum.reply
@@ -44,7 +44,7 @@ export function Comment({
               {comment?.date}
             </span>
           </div>
-          <h3 className="text-content-primary mt-2 text-xl font-bold">
+          <h3 className="mt-2 text-xl font-bold text-content-primary">
             {comment?.title}
           </h3>
           <p
@@ -67,7 +67,7 @@ export function Comment({
       {!isReply && <hr />}
       <div
         className={clsx(
-          isReply ? 'border-l-grey-10 border-l' : undefined,
+          isReply ? 'border-l border-l-grey-10' : undefined,
         )}
       >
         <CommentReactionsBar
@@ -102,11 +102,11 @@ export function Comment({
       </div>
       {showCommentBox && (
         <form>
-          <div className="stack-layout bg-background-secondary mt-4 gap-3 p-3">
+          <div className="stack-layout mt-4 gap-3 bg-background-secondary p-3">
             {user && <CommentAuthor {...user} />}
             <textarea
               name="comment"
-              className="text-grey-40 resize-none p-3 text-sm"
+              className="resize-none p-3 text-sm text-grey-40"
               placeholder="What are your thoughts?"
               id="comment"
               rows={5}

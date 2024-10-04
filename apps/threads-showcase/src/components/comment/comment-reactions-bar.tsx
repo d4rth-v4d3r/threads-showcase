@@ -16,7 +16,7 @@ export function CommentReactionsBar({
 }: CommentReactionsBarProps) {
   return (
     <div className="cluster-layout--between px-6 py-2">
-      <div className="cluster-layout--start [&_>_span]:bg-grey-5 gap-2 text-xs [&_>_span]:rounded-full [&_>_span]:px-2 [&_>_span]:py-1">
+      <div className="cluster-layout--start gap-2 text-xs [&_>_span]:rounded-full [&_>_span]:bg-grey-5 [&_>_span]:px-2 [&_>_span]:py-1">
         {reactions.length === 0 && (
           <span className="[&&]:px-1">
             <ReactionIcon />
@@ -28,7 +28,7 @@ export function CommentReactionsBar({
           </span>
         ))}
       </div>
-      <div className="cluster-layout--start text-content-secondary gap-4 text-sm">
+      <div className="cluster-layout--start gap-4 text-sm text-content-secondary">
         {totalComments > 0 && (
           <>
             {totalComments} comments

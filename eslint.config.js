@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const nx = require('@nx/eslint-plugin');
 const ts = require('typescript-eslint');
-const tailwind = require('eslint-plugin-tailwindcss');
 
 module.exports = [
   ...nx.configs['flat/base'],
@@ -40,6 +39,7 @@ module.exports = [
       '**/jest.config.ts',
       '**/postcss.config.js',
       '**/tailwind.config.js',
+      '**/webpack.config.js',
     ],
   },
   ...ts.configs.strictTypeChecked.map((config) => ({

@@ -10,7 +10,7 @@ export type ContentHeaderProps = {
 export function ContentHeader({ article }: ContentHeaderProps) {
   return (
     <>
-      <section className="text-content-secondary font-semibold">
+      <section className="font-semibold text-content-secondary">
         <button className="icon-layout px-11 py-5">
           <ArrowLeftIcon />
           {article.title}
@@ -26,8 +26,8 @@ export function ContentHeader({ article }: ContentHeaderProps) {
           />
         </div>
       </section>
-      <hr className="bg-banner-secondary h-2 w-full border-0" />
-      <section className="stack-layout bg-banner-primary text-content-inverse-primary gap-2 px-2 py-5 md:px-3 lg:px-24">
+      <hr className="h-2 w-full border-0 bg-banner-secondary" />
+      <section className="stack-layout gap-2 bg-banner-primary px-2 py-5 text-content-inverse-primary md:px-3 lg:px-24">
         <h1 className="text-[32px] font-bold">{article.title}</h1>
         <div className="cluster-layout--between">
           <div className="icon-layout">
@@ -56,7 +56,7 @@ export function ContentHeader({ article }: ContentHeaderProps) {
               </span>
             </div>
           </div>
-          <div className="cluster-layout--end [&_button]:bg-background-body [&_button]:text-content-primary gap-2 [&_button]:rounded-lg [&_button]:py-[10px]">
+          <div className="cluster-layout--end gap-2 [&_button]:rounded-lg [&_button]:bg-background-body [&_button]:py-[10px] [&_button]:text-content-primary">
             <button className="px-3">•••</button>
             <button className="px-2 lg:px-6">Subscribe</button>
           </div>

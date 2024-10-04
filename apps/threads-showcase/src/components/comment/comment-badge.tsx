@@ -8,11 +8,11 @@ export function CommentBadge({
   date,
 }: CommentBadgeProps) {
   return (
-    <div className="icon-layout text-content-secondary text-sm font-semibold">
+    <div className="icon-layout text-sm font-semibold text-content-secondary">
       {icon && <span className="text-xl">{icon}</span>}
       {message && <span>{message}</span>}
       {date && (
-        <span className="text-content-tertiary text-xs">• {date}</span>
+        <span className="text-xs text-content-tertiary">• {date}</span>
       )}
     </div>
   );
