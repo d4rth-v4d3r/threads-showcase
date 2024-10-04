@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/apps/threads-api/src/app.js",
+      "src": "dist/apps/threads-api/src/index.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "dist/apps/threads-api/src/app.js"
+      "source": "/api/(.*)",
+      "destination": "dist/apps/threads-api/src"
     }
   ]
 }

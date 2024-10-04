@@ -4,10 +4,11 @@ import express from 'express';
 
 export const errorHandler: express.ErrorRequestHandler = (
   err,
-  _,
+  req,
   res,
   __,
 ) => {
+  console.log(err, req.originalUrl);
   if (err instanceof NotFoundError) {
     return res.status(404).json({ message: err.message });
   }
