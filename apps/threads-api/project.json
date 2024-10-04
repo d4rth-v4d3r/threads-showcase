@@ -21,17 +21,6 @@
           "buildTarget": "threads-api:build:production"
         }
       }
-    },
-    "build": {
-      "executor": "@nx/js:swc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/threads-api",
-        "main": "apps/threads-api/src/main.ts",
-        "tsConfig": "apps/threads-api/tsconfig.json",
-        "additionalEntryPoints": ["apps/threads-api/src/main.ts"],
-        "assets": []
-      }
     }
   }
 }

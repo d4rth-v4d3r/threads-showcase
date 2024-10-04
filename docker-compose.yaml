@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  threads-api:
+    build:
+      context: .
+      dockerfile: apps/threads-api/Dockerfile
+    ports:
+      - '3333:3333'
+    networks:
+      - threads-network
+  threads-showcase:
+    build:
+      context: .
+      dockerfile: apps/threads-showcase/Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - threads-network
+    environment:
+      API_URL: http://threads-api:3333
+networks:
+  threads-network:
+    driver: bridge

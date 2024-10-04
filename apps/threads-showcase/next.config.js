@@ -17,9 +17,6 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-  ...(process.env.NODE_ENV !== 'production' && {
-    cacheMaxMemorySize: 0,
-  }),
 };
 
 const plugins = [
