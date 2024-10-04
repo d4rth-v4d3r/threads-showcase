@@ -1,0 +1,26 @@
+{
+  "name": "threads-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/threads-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "threads-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "threads-api:build:development"
+        },
+        "production": {
+          "buildTarget": "threads-api:build:production"
+        }
+      }
+    }
+  }
+}
