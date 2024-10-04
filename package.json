@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "nx": "nx"
+    "nx": "nx",
+    "vercel": "vercel"
   },
   "private": true,
   "dependencies": {
@@ -65,6 +66,7 @@
     "tslib": "2.3.0",
     "typescript": "5.5.2",
     "typescript-eslint": "8.0.0",
+    "vercel": "37.6.1",
     "webpack-cli": "5.1.4"
   }
 }
