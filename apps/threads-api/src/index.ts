@@ -1,9 +1,9 @@
-import express from 'express';
+import * as express from 'express';
 import * as path from 'path';
 import { errorHandler } from './handlers/error-handler';
 import { articlesRouter } from './router/articles-router';
 
-const app = express();
+export const app = express.default();
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 

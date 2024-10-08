@@ -19,6 +19,16 @@ services:
       - threads-network
     environment:
       API_URL: http://threads-api:3333
+  threads-database:
+    image: amazon/dynamodb-local
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data
+    user: root
+    volumes:
+      - dynamodb_data:/home/dynamodblocal/data
+    ports:
+      - '8000:8000'
+volumes:
+  dynamodb_data:
 networks:
   threads-network:
     driver: bridge

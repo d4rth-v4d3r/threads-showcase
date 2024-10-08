@@ -1,15 +1,15 @@
 import { getArticleFactory } from '@threads/core';
 import express from 'express';
-import { articleJsonAdapter } from '../json/article-json-adapter';
+import { getProviders } from '../container/providers';
 
 export const articlesRouter = express.Router();
 
 // Route to get an article by ID
 articlesRouter.get('/article/:id', (req, res, next) => {
-  const articleRepository = articleJsonAdapter();
+  const providers = getProviders();
   const articleId = req.params.id;
 
-  void getArticleFactory({ articleRepository })(articleId)
+  void getArticleFactory(providers)(articleId)
     .then((article) => {
       res.json(article);
     })

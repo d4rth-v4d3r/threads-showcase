@@ -4,10 +4,12 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, '../../dist/apps/threads-api'),
-    library: {
-      type: 'umd',
-      export: 'default',
-    },
+    ...(process.env.TARGET === 'vercel' && {
+      library: {
+        type: 'commonjs',
+        export: 'default',
+      },
+    }),
   },
   plugins: [
     new NxAppWebpackPlugin({
