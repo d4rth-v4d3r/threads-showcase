@@ -4,6 +4,7 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, '../../dist/apps/threads-api'),
+    filename: 'index.js',
     library: {
       type: 'umd',
       export: 'default',
