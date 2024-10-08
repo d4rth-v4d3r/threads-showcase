@@ -5,6 +5,11 @@ module.exports = {
   output: {
     path: join(__dirname, '../../dist/apps/threads-api'),
     filename: 'api/index.js',
+
+    chunkFormat: 'module',
+  },
+  experiments: {
+    outputModule: true,
   },
   plugins: [
     new NxAppWebpackPlugin({
