@@ -1,13 +1,4 @@
 {
   "version": 2,
-  "functions": {
-    "api/*": {
-      "runtime": "vercel-node@20",
-      "memory": 1024,
-      "includeFiles": "api/**",
-      "environment": {
-        "NODE_ENV": "production"
-      }
-    }
-  }
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
