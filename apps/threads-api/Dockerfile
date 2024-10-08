@@ -12,4 +12,4 @@ RUN npm install --production
 EXPOSE 3333
 
 # Set the command to run the main script
-CMD ["node", "main.js"]
+CMD ["node", "index.js"]
