@@ -4,14 +4,10 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, '../../dist/apps/threads-api'),
-    ...(process.env.APP_ENV !== 'local'
-      ? {
-          library: {
-            type: 'umd',
-            export: 'default',
-          },
-        }
-      : {}),
+    library: {
+      type: 'umd',
+      export: 'default',
+    },
   },
   plugins: [
     new NxAppWebpackPlugin({

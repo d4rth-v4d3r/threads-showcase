@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import request from 'supertest';
-import app from './setup';
+import app from './index';
 
 describe('apps/threads-api/src/index.ts', () => {
   test('should show a single article', async () => {

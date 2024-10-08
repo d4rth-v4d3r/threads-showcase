@@ -1,9 +1,17 @@
-import { app } from './setup';
+import * as express from 'express';
+import * as path from 'path';
+import { errorHandler } from './handlers/error-handler';
+import { articlesRouter } from './router/articles-router';
 
-const port = process.env.PORT || 3333;
+export const app = express.default();
 
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port.toString()}/api`);
-});
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-server.on('error', console.error);
+app.use('/api', articlesRouter);
+
+app.use('/', (_, res) =>
+  res.json({ message: 'Welcome to threads-api!' }),
+);
+app.use(errorHandler);
+
+module.exports = app;
