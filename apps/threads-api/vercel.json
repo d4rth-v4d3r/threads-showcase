@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "npm run nx build threads-api",
   "builds": [
     {
       "src": "dist/apps/threads-api/index.js",
