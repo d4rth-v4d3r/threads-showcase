@@ -3,13 +3,12 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/threads-api'),
+    path: join(__dirname, 'dist'),
     filename: 'api/index.js',
-
-    chunkFormat: 'module',
-  },
-  experiments: {
-    outputModule: true,
+    library: {
+      type: 'umd',
+      export: 'default',
+    },
   },
   plugins: [
     new NxAppWebpackPlugin({
