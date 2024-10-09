@@ -72,7 +72,8 @@
       }
     },
     "build": {
-      "cache": true
+      "cache": true,
+      "outputs": ["{projectRoot}/dist", "{workspaceRoot}/dist"]
     },
     "lint": {
       "cache": true
