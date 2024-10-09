@@ -12,6 +12,31 @@
       "options": {
         "outputPath": "dist/apps/threads-showcase"
       }
+    },
+    "dev-backend": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "nx run threads-api:spin-db"
+          },
+          {
+            "command": "nx run threads-api:dev"
+          }
+        ],
+        "parallel": true,
+        "readyWhen": "Server is running on port 3333"
+      },
+      "configurations": {}
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["dev-backend"],
+      "options": {
+        "command": "next dev",
+        "cwd": "apps/threads-showcase"
+      },
+      "configurations": {}
     }
   }
 }

@@ -72,12 +72,10 @@
       }
     },
     "build": {
-      "cache": true,
-      "outputs": ["{workspaceRoot}/dist"]
+      "cache": true
     },
     "build-function": {
-      "cache": true,
-      "outputs": ["{projectRoot}/dist"]
+      "cache": true
     },
     "lint": {
       "cache": true
