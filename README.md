@@ -6,7 +6,7 @@
 # Vercel Showcase
 
 - [Frontend](https://threads-showcase.vercel.app/)
-- [Backend](https://threads-server-umber.vercel.app/api/article/1ee0920a-5b5e-4605-a8bd-27de171e3cef)
+- [Backend](https://threads-api-beta.vercel.app/api/article/1ee0920a-5b5e-4605-a8bd-27de171e3cef)
 
 # Running checks
 
