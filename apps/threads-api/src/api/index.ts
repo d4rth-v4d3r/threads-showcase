@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as path from 'path';
-import { errorHandler } from './handlers/error-handler';
-import { articlesRouter } from './router/articles-router';
+import { errorHandler } from '../handlers/error-handler';
+import { articlesRouter } from '../router/articles-router';
 
 export const app = express.default();
 

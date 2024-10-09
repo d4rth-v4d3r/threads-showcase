@@ -40,6 +40,7 @@ module.exports = [
       '**/postcss.config.js',
       '**/tailwind.config.js',
       '**/webpack.config.js',
+      '**/webpack.*.config.js',
     ],
   },
   ...ts.configs.strictTypeChecked.map((config) => ({

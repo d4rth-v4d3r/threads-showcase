@@ -22,12 +22,40 @@
         }
       }
     },
-    "vercel:dev": {
+    "spin-db": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build"],
+      "options": {
+        "command": "docker-compose up -d threads-database"
+      }
+    },
+    "build-function": {
+      "executor": "@nx/webpack:webpack",
+      "options": {
+        "webpackConfig": "apps/threads-api/webpack.vercel.config.js",
+        "outputPath": "dist/api"
+      }
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-function"],
+      "options": {
+        "command": "vercel link --yes --project threads-api",
+        "cwd": "apps/threads-api"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["link"],
+      "defaultConfiguration": "development",
       "options": {
         "command": "vercel dev",
         "cwd": "apps/threads-api"
+      },
+      "configurations": {
+        "production": {
+          "command": "vercel --prod",
+          "cwd": "apps/threads-api"
+        }
       }
     }
   }

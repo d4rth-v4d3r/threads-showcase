@@ -4,12 +4,17 @@ const { join } = require('path');
 module.exports = {
   output: {
     path: join(__dirname, 'dist'),
+    filename: 'api/index.js',
+    library: {
+      type: 'umd',
+      export: 'default',
+    },
   },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
-      main: './src/main.ts',
+      main: './src/api/index.ts',
       tsConfig: './tsconfig.app.json',
       assets: ['./src/assets'],
       optimization: false,
