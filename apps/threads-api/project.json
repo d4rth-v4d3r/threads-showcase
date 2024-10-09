@@ -39,22 +39,12 @@
       "executor": "nx:run-commands",
       "dependsOn": ["build-function"],
       "options": {
-        "commands": [
-          {
-            "command": "vercel login",
-            "cwd": "apps/threads-api"
-          },
-          {
-            "command": "vercel link --yes --project threads-api",
-            "cwd": "apps/threads-api"
-          }
-        ],
-        "parallel": false
+        "command": "vercel link --yes --project threads-api --token {args.token}",
+        "cwd": "apps/threads-api"
       }
     },
     "deploy": {
       "executor": "nx:run-commands",
-      "dependsOn": ["link"],
       "defaultConfiguration": "development",
       "options": {
         "command": "vercel dev",
