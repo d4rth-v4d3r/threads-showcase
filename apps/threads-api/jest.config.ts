@@ -8,6 +8,7 @@ export default {
       { tsconfig: '<rootDir>/tsconfig.spec.json' },
     ],
   },
+  setupFilesAfterEnv: ['<rootDir>/src/test/setup-env-vars.ts'],
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/threads-api',
 };
