@@ -5,13 +5,13 @@ on:
     branches:
       - main
   pull_request:
-
 permissions:
   actions: read
   contents: read
 
 jobs:
   main:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
