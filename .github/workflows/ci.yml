@@ -37,7 +37,7 @@ jobs:
       # Nx Affected runs only tasks affected by the changes in this PR/commit. Learn more: https://nx.dev/ci/features/affected
       - run: npm run nx affected -- -t lint test build
 
+      - run: npx nx-cloud complete-ci-run
+
       # Deploy to production manually applications that are not frontend projects
       - run: npm run nx run threads-api:deploy:production
-
-      - run: npx nx-cloud complete-ci-run

@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "ignoreCommand": "exit 0",
+  "git": {
+    "deploymentEnabled": false
+  },
   "builds": [
     {
       "src": "dist/api/index.js",
