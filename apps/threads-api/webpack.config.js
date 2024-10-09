@@ -3,7 +3,7 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/threads-api'),
+    path: join(__dirname, '../../api/apps/threads-api'),
     filename: 'api/index.js',
 
     chunkFormat: 'module',
