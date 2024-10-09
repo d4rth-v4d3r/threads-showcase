@@ -41,8 +41,7 @@ jobs:
 
       # Deploy to production manually applications that are not frontend projects
       - run: |
-          npm run vercel login -- --github
           npm run nx run threads-api:link -- --token=${{ secrets.VERCEL_TOKEN }}
-          npm run nx run threads-api:deploy:production
+          npm run nx run threads-api:deploy:production -- --token=${{ secrets.VERCEL_TOKEN }}
         env:
           NX_CLOUD_DISTRIBUTED_EXECUTION: false
