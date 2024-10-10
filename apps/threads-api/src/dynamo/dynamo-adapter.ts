@@ -19,7 +19,7 @@ function mapComment(
       id: comment.author.id,
       firstName: comment.author.firstname,
       lastName: comment.author.lastname,
-      photo: '',
+      photo: '/images/user-2.jpeg',
     },
     body: comment.body,
     title: comment.title,
